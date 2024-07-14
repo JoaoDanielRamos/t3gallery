@@ -1,5 +1,8 @@
 import { db } from "~/server/db";
 
+// every time there are changes to the database, this will be updated on the next page load
+export const dynamic = "force-dynamic";
+
 const mockUrls = [
   "https://utfs.io/f/17981bb8-1ca3-449b-8c38-05b7cf30fbad-ri0xv3.jpg",
   "https://utfs.io/f/1c20eda5-ac94-4d84-ab98-2b1eaaa33d73-khd7eq.png",
