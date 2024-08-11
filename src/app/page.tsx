@@ -1,4 +1,5 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Image from "next/image";
 import { getMyImages } from "~/server/queries";
 
 // every time there are changes to the database, this will be updated on the next page load
@@ -24,10 +25,10 @@ async function Images() {
   const images = await getMyImages();
 
   return (
-    <div className="items flex flex-wrap">
+    <div className="items flex flex-wrap justify-center">
       {images.map((image) => (
-        <div className="w-1/2 p-4" key={image.id}>
-          <img src={image.url} alt={image.name} />
+        <div className="p-4" key={image.id}>
+          <Image src={image.url} alt={image.name} width={480} height={480} />
         </div>
       ))}
     </div>
